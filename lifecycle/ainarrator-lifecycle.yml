@@ -1,0 +1,88 @@
+generated: '2026-09-14'
+method: probed
+source: >-
+  DNS, HTTP and registry probes of narrator.ai and its subdomains, the narratorai GitHub
+  organization API, and the Y Combinator company directory, all on 2026-09-14.
+name: Narrator platform lifecycle
+note: >-
+  NO apis.yml pointer is emitted for this file. It records an END OF LIFE that API Evangelist
+  OBSERVED; it is not a lifecycle, deprecation or status policy that Narrator published. Wiring
+  a Lifecycle / StatusPage / Deprecation pointer here would credit the company with an
+  operational practice it does not have.
+status: end-of-life
+summary: >-
+  Narrator (Y Combinator S2019, New York) shut down its hosted platform. Y Combinator lists the
+  company as Inactive. The narrator.ai apex and www host now 301-redirect to narratordata.com,
+  an unrelated WordPress site, and the API, application, GraphQL and status subdomains have been
+  removed from DNS entirely. The documentation host is a dangling third-party CNAME. In place of
+  the service, the company published its complete platform source under an MIT license.
+evidence:
+- observation: Y Combinator company directory lists Narrator as Inactive
+  url: https://www.ycombinator.com/companies/narrator
+  http_status: 200
+- observation: narrator.ai apex 301-redirects off-site to https://www.narratordata.com/
+  url: https://narrator.ai/
+  http_status: 301
+- observation: >-
+    narratordata.com serves "Narrator Data - Poetry and Reflections on Modern Life", a WordPress
+    7.1 blog unrelated to the data-intelligence company; it is not a rebrand and must not be
+    recorded as the company website.
+  url: https://narratordata.com/
+  http_status: 200
+- observation: docs.narrator.ai CNAMEs to ssl.readmessl.com and returns Cloudflare error 1014
+  url: https://docs.narrator.ai/
+  http_status: 403
+- observation: api.narrator.ai does not resolve (NXDOMAIN)
+  url: https://api.narrator.ai/
+  http_status: 0
+- observation: app.narrator.ai does not resolve (NXDOMAIN)
+  url: https://app.narrator.ai/
+  http_status: 0
+- observation: graph.narrator.ai (former Hasura GraphQL host) does not resolve (NXDOMAIN)
+  url: https://graph.narrator.ai/v1/graphql
+  http_status: 0
+- observation: status.narrator.ai does not resolve (NXDOMAIN); no status page exists
+  url: https://status.narrator.ai/
+  http_status: 0
+- observation: narrator.ai registration remains active (created 2017-12-16, expires 2027-08-09, 101domain, Cloudflare NS)
+  url: whois://narrator.ai
+  http_status: null
+surviving_surface:
+  github_organization:
+    url: https://github.com/narratorai
+    http_status: 200
+    name: Narrator
+    email: contact@narrator.ai
+    public_repos: 11
+    created: '2018-01-16'
+  source_release:
+    repository: https://github.com/narratorai/codebase
+    http_status: 200
+    license: MIT
+    last_push: '2025-02-21'
+    components:
+    - name: graph
+      description: Hasura GraphQL engine metadata, migrations and Postgres schema for the platform graph.
+    - name: mavis
+      description: Python service (FastAPI) holding the platform's business logic, batch jobs and GraphQL client operations.
+    - name: portal-narrator-next
+      description: Next.js customer portal.
+    - name: the-sequel
+      description: SQL editor component library.
+    - name: iac / auth-infra / assets-infra / corp-network
+      description: Terraform and infrastructure-as-code for the hosted deployment.
+    note: >-
+      The repository contains GraphQL OPERATION documents and Hasura metadata, plus a
+      mavis/scripts/output_openapi.py helper that would emit an OpenAPI at build time. It does
+      NOT contain a checked-in OpenAPI document, GraphQL SDL, AsyncAPI or Protobuf file, so no
+      contract was harvested. Generating one from application source would be fabrication and
+      was not done.
+packages:
+  searched: [npm, PyPI]
+  result: none
+  note: >-
+    No first-party Narrator client library exists. The npm packages "narrator-ai" and
+    "@narrator-ai/react" belong to an unrelated project by edspencer
+    (github.com/edspencer/narrator-ai). The PyPI names "narrator" (a tweet-summary library by
+    Chris A. Lindgren) and "mavis" (a BC Cancer structural-variant package) are likewise
+    unrelated and were rejected on the STEP 0c ownership check.

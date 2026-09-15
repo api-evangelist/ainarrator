@@ -1,4 +1,4 @@
-# Ainarrator
+# Narrator
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,5 +64,22 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Ainarrator is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://equityzen.com/company/ainarrator
+Narrator was a New York data-intelligence company (Y Combinator S2019) that built an end-to-end
+analytics platform on the Activity Schema — a single time-series modeling approach it published as
+an alternative to star-schema warehouse modeling.
+
+**This company is no longer operating.** Y Combinator lists Narrator as *Inactive*. The `narrator.ai`
+apex and `www` host now 301-redirect to `narratordata.com`, an unrelated WordPress site; `api.narrator.ai`,
+`app.narrator.ai`, `graph.narrator.ai` and `status.narrator.ai` no longer resolve in DNS; and
+`docs.narrator.ai` is a dangling ReadMe CNAME returning Cloudflare error 1014. Full contract discovery
+(OpenAPI, Swagger, GraphQL introspection, MCP `tools/list`, A2A agent card, `llms.txt`) was run against
+every resolving host and returned nothing — see `well-known/ainarrator-well-known.yml`.
+
+The only surviving first-party surface is the GitHub organization, where the complete platform source
+was published under an MIT license in February 2025. It contains no machine-readable API contract, and
+none was generated from it.
+
+- Y Combinator: https://www.ycombinator.com/companies/narrator
+- GitHub organization: https://github.com/narratorai
+- Open-sourced platform: https://github.com/narratorai/codebase
+- EquityZen listing (harvest source): https://equityzen.com/company/ainarrator

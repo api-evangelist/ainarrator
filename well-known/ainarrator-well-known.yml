@@ -1,0 +1,159 @@
+generated: '2026-09-14'
+method: probed
+source: >-
+  Direct HTTPS probe of every host the record knows for Narrator on 2026-09-14.
+  No apis.yml WellKnown or SecurityTxt pointer is emitted: every path missed, so this
+  file records an absence, not a served surface.
+name: Narrator well-known discovery probe
+note: >-
+  narrator.ai and www.narrator.ai answer every path with a 301 off-site to narratordata.com,
+  an unrelated WordPress site that now occupies the redirect target. docs.narrator.ai is a
+  dangling ReadMe CNAME returning Cloudflare error 1014 ("CNAME Cross-User Banned") on every
+  path. portal.narrator.ai is a Vercel deployment that 404s everything. api.narrator.ai,
+  app.narrator.ai, graph.narrator.ai and status.narrator.ai do not resolve in DNS at all.
+  Nothing here is a document; no pointer is warranted.
+hosts:
+- host: narrator.ai
+  note: 301 to https://www.narratordata.com/ on every path; no document served.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+- host: www.narrator.ai
+  note: 301 to https://narratordata.com/ on every path; no document served.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+- host: docs.narrator.ai
+  note: Cloudflare error 1014 (dangling ReadMe CNAME to ssl.readmessl.com); documentation host is dead.
+  documents:
+  - path: /.well-known/security.txt
+    status: 403
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 403
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 403
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 403
+    file: null
+  - path: /.well-known/api-catalog
+    status: 403
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 403
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 403
+    file: null
+  - path: /.well-known/agent.json
+    status: 403
+    file: null
+- host: portal.narrator.ai
+  note: Vercel deployment; 404 text/plain on every path.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: blog.narrator.ai
+  note: 301 off-site on every path; no document served.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+- host: api.narrator.ai
+  note: NXDOMAIN — host does not resolve; not probed over HTTP.
+  documents: []
+- host: app.narrator.ai
+  note: NXDOMAIN — host does not resolve; not probed over HTTP.
+  documents: []
+- host: graph.narrator.ai
+  note: NXDOMAIN — the former Hasura GraphQL host does not resolve; not probed over HTTP.
+  documents: []
+- host: status.narrator.ai
+  note: NXDOMAIN — host does not resolve; not probed over HTTP.
+  documents: []
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery run against every resolving host on 2026-09-14. Paths probed per
+    host: /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /llms.txt,
+    /graphql, /mcp. Every one returned the host's blanket 301 / 403 / 404 above; none returned a
+    body that parses as OpenAPI, Swagger, GraphQL SDL, an MCP tools/list result or an A2A agent
+    card. No OGC evidence exists anywhere in the record, so no OGC probe was run.
+  result: no published contract found
+  probed:
+  - paths: [/openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs, /llms.txt, /graphql, /mcp]
+    hosts: [narrator.ai, www.narrator.ai, docs.narrator.ai, portal.narrator.ai, blog.narrator.ai]
+    outcome: uniform host-level 301/403/404; no parseable contract

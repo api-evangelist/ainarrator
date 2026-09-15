@@ -1,8 +1,17 @@
 aid: ainarrator
-name: Ainarrator
-description: 'Ainarrator is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: Narrator
+description: 'Narrator was a New York data-intelligence company (Y Combinator S2019) that
+  built an end-to-end analytics platform on top of the Activity Schema — a single time-series
+  modeling approach it published as an alternative to star-schema warehouse modeling — covering
+  warehouse transformations, dataset and narrative building, customer-journey analysis and
+  scheduled materializations. The company raised roughly $7.6M and is listed by Y Combinator
+  as Inactive; its narrator.ai domain now 301-redirects to an unrelated WordPress site, and
+  its API, app and documentation hosts no longer resolve or serve. The only surviving
+  first-party surface is the narratorai GitHub organization, where the full platform source
+  (Hasura graph, the Mavis Python service, and the Next.js portal) was published under an MIT
+  license in February 2025.'
 url: https://raw.githubusercontent.com/api-evangelist/ainarrator/refs/heads/main/apis.yml
+image: https://avatars.githubusercontent.com/u/35506833?v=4
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +21,12 @@ created: '2026-09-14'
 modified: '2026-09-14'
 tags:
 - Company
+- Analytics
+- Data
+- Business Intelligence
+- Data Warehouse
+- Activity Schema
+- Open Source
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +35,38 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://equityzen.com/company/ainarrator
+  name: Narrator on GitHub
+  url: https://github.com/narratorai
+  description: >-
+    narrator.ai 301-redirects to an unrelated site and no company-operated web property
+    survives, so the company's own GitHub organization page — which still carries the
+    Narrator name, description and contact@narrator.ai address — is the only first-party
+    web presence left. A venue listing (EquityZen, Y Combinator, LinkedIn) is deliberately
+    NOT used here: it is a third party's page about the company, not the company's own.
+- type: GitHubOrganization
+  url: https://github.com/narratorai
+x-enrichment:
+  date: '2026-09-14'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Narrator is listed Inactive by Y Combinator and its narrator.ai domain now 301-redirects
+    to narratordata.com, an unrelated WordPress poetry blog; api.narrator.ai and app.narrator.ai
+    no longer resolve in DNS and docs.narrator.ai returns Cloudflare error 1014 from a dangling
+    ReadMe CNAME, so there is no live surface left to profile.
+  evidence:
+  - url: https://narrator.ai/
+    status: 301
+  - url: https://docs.narrator.ai/openapi.json
+    status: 403
+  - url: https://portal.narrator.ai/openapi.json
+    status: 404
+  - url: https://www.ycombinator.com/companies/narrator
+    status: 200
+  - url: https://github.com/narratorai
+    status: 200
+  checked: '2026-09-14'
