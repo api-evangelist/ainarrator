@@ -26,7 +26,7 @@ tags:
 - Business Intelligence
 - Data Warehouse
 - Activity Schema
-- Open-Source
+- Open Source
 tags_raw:
 - Company
 - Analytics
@@ -35,6 +35,7 @@ tags_raw:
 - Data Warehouse
 - Activity Schema
 - Open Source
+- Open-Source
 apis: []
 maintainers:
 - FN: Kin Lane
