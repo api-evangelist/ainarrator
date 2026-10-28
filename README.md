@@ -64,22 +64,70 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Narrator was a New York data-intelligence company (Y Combinator S2019) that built an end-to-end
-analytics platform on the Activity Schema — a single time-series modeling approach it published as
-an alternative to star-schema warehouse modeling.
+Narrator was a New York data-intelligence company (Y Combinator S2019) that built an end-to-end analytics platform on top of the Activity Schema — a single time-series modeling approach it published as an alternative to star-schema warehouse modeling — covering warehouse transformations, dataset and narrative building, customer-journey analysis and scheduled materializations. The company raised roughly $7.6M and is listed by Y Combinator as Inactive; its narrator.ai domain now 301-redirects to an unrelated WordPress site, and its API, app and documentation hosts no longer resolve or serve. The only surviving first-party surface is the narratorai GitHub organization, where the full platform source (Hasura graph, the Mavis Python service, and the Next.js portal) was published under an MIT license in February 2025.
 
-**This company is no longer operating.** Y Combinator lists Narrator as *Inactive*. The `narrator.ai`
-apex and `www` host now 301-redirect to `narratordata.com`, an unrelated WordPress site; `api.narrator.ai`,
-`app.narrator.ai`, `graph.narrator.ai` and `status.narrator.ai` no longer resolve in DNS; and
-`docs.narrator.ai` is a dangling ReadMe CNAME returning Cloudflare error 1014. Full contract discovery
-(OpenAPI, Swagger, GraphQL introspection, MCP `tools/list`, A2A agent card, `llms.txt`) was run against
-every resolving host and returned nothing — see `well-known/ainarrator-well-known.yml`.
+**Areas:** Company · Analytics · Data · Business Intelligence · Data Warehouse · Activity Schema · Open Source
 
-The only surviving first-party surface is the GitHub organization, where the complete platform source
-was published under an MIT license in February 2025. It contains no machine-readable API contract, and
-none was generated from it.
+## Narrator on APIs.io
 
-- Y Combinator: https://www.ycombinator.com/companies/narrator
-- GitHub organization: https://github.com/narratorai
-- Open-sourced platform: https://github.com/narratorai/codebase
-- EquityZen listing (harvest source): https://equityzen.com/company/ainarrator
+Everything profiled for Narrator is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/ainarrator/](https://apis.io/providers/ainarrator/)** — or go straight to one of the APIs or properties below.
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://github.com/narratorai)
+- [GitHub](https://github.com/narratorai)
+
+## API Evangelist rating
+
+**Kin Score 2.9** — minimal · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 0.0 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 0.0** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/ainarrator/](https://apis.io/providers/ainarrator/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Narrator: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/ainarrator/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
